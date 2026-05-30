@@ -1,0 +1,1370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 20th Birthday Hasini ❤️</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='70'%20font-size='60'%3E%F0%9F%92%96%3C/text%3E%3C/svg%3E" />
+
+
+  <!-- Tailwind CSS (CDN only) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <style>
+    /* Extra cinematic polish (Tailwind stays primary) */
+    :root{
+      color-scheme: dark;
+    }
+    html, body { height: 100%; cursor: none; }
+    body {
+      overflow-x: hidden;
+      background: radial-gradient(1200px 700px at 10% 10%, rgba(236, 72, 153, 0.25), transparent 55%),
+                  radial-gradient(900px 500px at 85% 20%, rgba(59, 130, 246, 0.20), transparent 60%),
+                  #070A12;
+    }
+
+    /* Custom cursor heart trail */
+    #cursorTrail {
+      position: fixed;
+      width: 24px;
+      height: 24px;
+      pointer-events: none;
+      z-index: 9999;
+      user-select: none;
+      font-size: 20px;
+      opacity: 0;
+      transition: opacity 0.15s ease;
+    }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Subtle starfield */
+    .stars {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.9) 50%, transparent 51%),
+        radial-gradient(1px 1px at 70% 20%, rgba(255,255,255,0.7) 45%, transparent 46%),
+        radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,0.8) 45%, transparent 46%),
+        radial-gradient(2px 2px at 90% 70%, rgba(255,255,255,0.85) 50%, transparent 51%),
+        radial-gradient(1px 1px at 10% 60%, rgba(255,255,255,0.65) 45%, transparent 46%);
+      opacity: 0.8;
+      filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+      animation: twinkle 4s ease-in-out infinite;
+    }
+    @keyframes twinkle{
+      0%,100%{ transform: scale(1); opacity: 0.75; }
+      50%{ transform: scale(1.02); opacity: 1; }
+    }
+
+    /* Fancy text glow */
+    .glow-text {
+      text-shadow:
+        0 0 10px rgba(244, 63, 94, 0.45),
+        0 0 20px rgba(236, 72, 153, 0.35),
+        0 0 50px rgba(59, 130, 246, 0.18);
+    }
+
+    /* Glass */
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    /* Heart pulse */
+    .heartPulse {
+      animation: heartPulse 1.2s ease-in-out infinite;
+    }
+    @keyframes heartPulse{
+      0%,100%{ transform: scale(1); filter: drop-shadow(0 0 18px rgba(244,63,94,0.35)); }
+      50%{ transform: scale(1.08); filter: drop-shadow(0 0 26px rgba(244,63,94,0.55)); }
+    }
+
+    /* Candle flame */
+    .candleFlame {
+      animation: flameFlicker 0.8s ease-in-out infinite alternate;
+    }
+    @keyframes flameFlicker {
+      0% { transform: scale(1) translateY(0); opacity: 0.8; }
+      100% { transform: scale(1.1) translateY(-1px); opacity: 1; }
+    }
+
+    /* Floating animation */
+    .float-forever {
+      animation: floatForever 6s ease-in-out infinite;
+    }
+    @keyframes floatForever {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-12px) rotate(3deg); }
+      50% { transform: translateY(-20px) rotate(0deg); }
+      75% { transform: translateY(-10px) rotate(-3deg); }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+    }
+
+    /* Lightbox */
+    .lightbox-bg{ background: rgba(0,0,0,0.72); }
+
+    /* Decorative floating items */
+    .float-up {
+      animation: floatUp 7s ease-in-out infinite;
+    }
+    @keyframes floatUp {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-16px); }
+    }
+
+    /* Reason card hover effect */
+    .reasonCard {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .reasonCard:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(236,72,153,0.25);
+    }
+
+    /* Cake sparkle */
+    .cakeSparkle {
+      animation: cakeSparkleAnim 2s ease-in-out infinite;
+    }
+    @keyframes cakeSparkleAnim {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body class="text-white">
+  <!-- Custom cursor heart trail -->
+  <div id="cursorTrail">♥</div>
+
+  <!-- Ambient background overlays -->
+  <div class="fixed inset-0 -z-20 overflow-hidden">
+    <div class="stars"></div>
+
+    <!-- Floating hearts/roses/sparkles/particles canvas -->
+    <canvas id="ambientCanvas" class="absolute inset-0 opacity-70"></canvas>
+  </div>
+
+  <!-- Soft background music support (OPTIONAL) -->
+  <!-- Replace src below with your own romantic audio file. Keep it small for best performance. -->
+  <audio id="bgMusic" loop preload="auto" crossorigin="anonymous">
+    <source src="" type="audio/mpeg" />
+  </audio>
+
+  <!-- Stage 1: Loading Screen -->
+  <section id="stageLoading" class="fixed inset-0 z-50">
+    <div class="absolute inset-0 bg-gradient-to-b from-black via-[#090A14] to-[#070A12]">
+      <div class="stars"></div>
+    </div>
+
+    <canvas id="loadingParticles" class="absolute inset-0 opacity-90"></canvas>
+
+    <div class="relative h-full flex items-center justify-center px-6">
+      <div class="text-center">
+        <div class="mx-auto mb-6 relative w-20 h-20">
+          <div class="absolute inset-0 rounded-full border border-pink-300/30 animate-ping" style="animation-duration:2.2s"></div>
+          <div class="absolute inset-0 rounded-full border border-blue-300/20" style="transform:scale(0.8)"></div>
+          <div class="absolute inset-0 flex items-center justify-center heartPulse">
+            <span class="text-5xl">❤️</span>
+          </div>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-extrabold glow-text tracking-wide">
+          A Special Surprise Is Waiting...
+        </h1>
+        <p class="mt-3 text-sm sm:text-base text-white/70">
+          Hold on… the magic is almost here.
+        </p>
+        <div class="mt-8 flex items-center justify-center gap-2 text-white/80">
+          <span class="w-2 h-2 rounded-full bg-pink-400 animate-pulse"></span>
+          <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse" style="animation-delay:0.2s"></span>
+          <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse" style="animation-delay:0.4s"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stage 2: Countdown -->
+  <section id="stageCountdown" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-black via-[#090A14] to-[#070A12]">
+      <div class="stars"></div>
+    </div>
+    <canvas id="countdownCanvas" class="absolute inset-0"></canvas>
+    <div class="relative h-full flex items-center justify-center">
+      <div class="text-center">
+        <div class="text-xs uppercase tracking-widest text-white/50 mb-4">Revealing soon</div>
+        <div id="countNumber" class="text-8xl sm:text-9xl font-black glow-text select-none">3</div>
+        <div class="mt-6 text-white/65">3 → 2 → 1</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <main id="page" class="hidden">
+    <!-- HERO -->
+    <section id="hero" class="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
+      <!-- Cinematic gradient backdrop -->
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute inset-0 bg-[radial-gradient(900px_circle_at_20%_10%,rgba(236,72,153,0.35),transparent_55%),radial-gradient(900px_circle_at_85%_35%,rgba(59,130,246,0.28),transparent_60%),linear-gradient(to_bottom,rgba(0,0,0,0.0),rgba(0,0,0,0.6))]" />
+        <div class="absolute -inset-[20%] bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-blue-500/20 blur-3xl animate-pulse"></div>
+      </div>
+
+      <!-- Parallax layers -->
+      <div id="parallaxLayer1" class="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-pink-500/10 blur-2xl opacity-70"></div>
+      <div id="parallaxLayer2" class="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-blue-500/10 blur-2xl opacity-60"></div>
+
+      <!-- Floating decorative elements - always moving -->
+      <div class="absolute top-10 left-10 text-3xl opacity-70 float-forever">💗</div>
+      <div class="absolute top-24 right-12 text-4xl opacity-60 float-forever" style="animation-duration:8.5s">🌹</div>
+      <div class="absolute bottom-20 left-20 text-3xl opacity-60 float-forever" style="animation-duration:9s">✨</div>
+      <div class="absolute bottom-24 right-16 text-4xl opacity-60 float-forever" style="animation-duration:10.2s">🕊️</div>
+      <div class="absolute top-1/3 left-1/4 text-2xl opacity-40 float-forever" style="animation-duration:12s">💞</div>
+      <div class="absolute bottom-1/3 right-1/4 text-2xl opacity-40 float-forever" style="animation-duration:14s">🌸</div>
+      <div class="absolute top-5/6 left-10 text-xl opacity-30 float-forever" style="animation-duration:16s">💫</div>
+      <div class="absolute bottom-5/6 right-10 text-xl opacity-30 float-forever" style="animation-duration:15s">⭐</div>
+
+      <div class="max-w-5xl w-full text-center">
+        <div data-aos="fade-up" class="inline-flex items-center gap-3 px-4 py-2 rounded-full glass">
+          <span class="text-xl">🎬</span>
+          <span class="text-sm sm:text-base text-white/80">A magical birthday cinematic experience</span>
+        </div>
+
+        <h2 data-aos="zoom-in" data-aos-duration="900" class="mt-6 text-4xl sm:text-6xl md:text-7xl font-black glow-text leading-tight">
+          Happy 20th Birthday Hasini ❤️
+        </h2>
+
+        <p data-aos="fade-up" data-aos-duration="900" class="mt-5 text-base sm:text-lg text-white/75 mx-auto max-w-2xl">
+          Today we celebrate 20 beautiful years of the most amazing girl in the world.
+        </p>
+
+        <div data-aos="fade-up" data-aos-duration="900" class="mt-8 flex items-center justify-center gap-3 flex-wrap">
+          <button id="openHeartBtn" class="group relative overflow-hidden rounded-2xl px-7 py-3 bg-gradient-to-r from-pink-500 to-rose-500 shadow-[0_0_30px_rgba(244,63,94,0.35)] hover:shadow-[0_0_50px_rgba(244,63,94,0.5)] transition-all duration-300">
+            <span class="relative z-10 font-bold">Open My Heart ❤️</span>
+            <span class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></span>
+          </button>
+          <a href="#gallery" class="rounded-2xl px-7 py-3 bg-white/6 border border-white/10 hover:bg-white/10 transition text-sm sm:text-base">
+            Take a Peek ✨
+          </a>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          <div data-aos="flip-left" class="glass rounded-2xl p-4">
+            <div class="text-2xl">🫶</div>
+            <div class="mt-2 font-semibold">Made with Love</div>
+            <div class="text-sm text-white/70 mt-1">Every animation is for her.</div>
+          </div>
+          <div data-aos="flip-up" class="glass rounded-2xl p-4">
+            <div class="text-2xl">🎇</div>
+            <div class="mt-2 font-semibold">Sparkle Moments</div>
+            <div class="text-sm text-white/70 mt-1">Confetti, fireworks & magic.</div>
+          </div>
+          <div data-aos="flip-right" class="glass rounded-2xl p-4">
+            <div class="text-2xl">🕰️</div>
+            <div class="mt-2 font-semibold">Memories Timeline</div>
+            <div class="text-sm text-white/70 mt-1">From first chat to forever.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-16 relative">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-end justify-between gap-4 flex-wrap">
+          <div>
+            <h3 data-aos="fade-up" class="text-3xl sm:text-4xl font-black glow-text">Romantic Photo Gallery</h3>
+            <p data-aos="fade-up" data-aos-delay="100" class="mt-2 text-white/70">✨</p>
+          </div>
+        </div>
+
+        <!-- Photo Grid -->
+        <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <!-- Photo 1 -->
+          <button class="galleryItem relative overflow-hidden rounded-2xl glass group" data-aos="zoom-in" data-aos-duration="600">
+            <img alt="WhatsApp Image 2026-05-30 at 16.13.22" class="w-full h-60 object-cover opacity-90 group-hover:opacity-100 transition" src="./WhatsApp Image 2026-05-30 at 16.13.22.jpeg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-80"></div>
+            <div class="absolute bottom-3 left-3 text-sm font-semibold">A Memory</div>
+          </button>
+
+          <!-- Photo 2 -->
+          <button class="galleryItem relative overflow-hidden rounded-2xl glass group" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="50">
+            <img alt="WhatsApp Image 2026-05-30 at 16.13.23 (1)" class="w-full h-60 object-cover opacity-90 group-hover:opacity-100 transition" src="./WhatsApp Image 2026-05-30 at 16.13.23 (1).jpeg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-80"></div>
+            <div class="absolute bottom-3 left-3 text-sm font-semibold">Smiles</div>
+          </button>
+
+          <!-- Photo 3 -->
+          <button class="galleryItem relative overflow-hidden rounded-2xl glass group" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="100">
+            <img alt="WhatsApp Image 2026-05-30 at 16.13.23 (2)" class="w-full h-60 object-cover opacity-90 group-hover:opacity-100 transition" src="./WhatsApp Image 2026-05-30 at 16.13.23 (2).jpeg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-80"></div>
+            <div class="absolute bottom-3 left-3 text-sm font-semibold">Our Moments</div>
+          </button>
+
+          <!-- Photo 4 -->
+          <button class="galleryItem relative overflow-hidden rounded-2xl glass group" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="150">
+            <img alt="WhatsApp Image 2026-05-30 at 16.13.23" class="w-full h-60 object-cover opacity-90 group-hover:opacity-100 transition" src="./WhatsApp Image 2026-05-30 at 16.13.23.jpeg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-80"></div>
+            <div class="absolute bottom-3 left-3 text-sm font-semibold">Glow</div>
+          </button>
+
+          <!-- Photo 5 -->
+          <button class="galleryItem relative overflow-hidden rounded-2xl glass group" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200">
+            <img alt="WhatsApp Image 2026-05-30 at 16.13.24 (1)" class="w-full h-60 object-cover opacity-90 group-hover:opacity-100 transition" src="./WhatsApp Image 2026-05-30 at 16.13.24 (1).jpeg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-80"></div>
+            <div class="absolute bottom-3 left-3 text-sm font-semibold">Sparkle</div>
+          </button>
+
+          <!-- Photo 6 -->
+          <button class="galleryItem relative overflow-hidden rounded-2xl glass group" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="250">
+            <img alt="WhatsApp Image 2026-05-30 at 16.13.24" class="w-full h-60 object-cover opacity-90 group-hover:opacity-100 transition" src="./WhatsApp Image 2026-05-30 at 16.13.24.jpeg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-80"></div>
+            <div class="absolute bottom-3 left-3 text-sm font-semibold">Forever</div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox popup -->
+    <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+      <div class="lightbox-bg absolute inset-0"></div>
+      <div class="relative z-10 max-w-4xl w-full">
+        <button id="lightboxClose" class="absolute -top-10 right-0 text-white/80 hover:text-white text-3xl">✕</button>
+        <img id="lightboxImg" class="w-full max-h-[70vh] object-contain rounded-2xl glass" alt="Expanded photo" />
+      </div>
+    </div>
+
+    <!-- Love Letter + 20 Reasons -->
+    <section class="py-16 relative">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+          <!-- Love Letter Section -->
+          <div data-aos="fade-up" class="glass rounded-3xl p-6 sm:p-8 relative overflow-hidden">
+            <!-- Glowing border -->
+            <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(600px circle at 20% 10%, rgba(236,72,153,0.25), transparent 55%), radial-gradient(500px circle at 90% 30%, rgba(59,130,246,0.20), transparent 55%); opacity:0.9"></div>
+            <div class="absolute -top-24 -left-24 w-56 h-56 rounded-full bg-pink-500/10 blur-3xl"></div>
+            <div class="absolute -bottom-24 -right-24 w-56 h-56 rounded-full bg-blue-500/10 blur-3xl"></div>
+
+            <div class="flex items-center gap-3">
+              <div class="text-3xl">💌</div>
+              <h3 class="text-2xl font-black glow-text">A Love Letter for Hasini</h3>
+            </div>
+
+            <div class="mt-5 border-t border-white/10 pt-5">
+              <div id="typingCard" class="relative">
+                <pre id="typingText" class="whitespace-pre-wrap text-white/80 leading-relaxed text-sm sm:text-base font-sans"> </pre>
+                <span id="typingCursor" class="absolute -right-2 top-0 text-pink-300 animate-pulse">|</span>
+              </div>
+
+              <div class="mt-6 flex items-center gap-3">
+                <div id="letterHeartbeat" class="w-3 h-3 rounded-full bg-pink-400 heartPulse"></div>
+                <div class="text-sm text-white/70">
+                  Read it slowly… like I mean every word.
+                </div>
+              </div>
+
+              <!-- Floating sparkles -->
+              <div class="pointer-events-none absolute inset-0">
+                <div class="absolute top-8 right-10 text-pink-200/80 text-xl animate-pulse">✨</div>
+                <div class="absolute top-24 left-10 text-blue-200/70 text-lg animate-pulse" style="animation-delay:0.4s">✨</div>
+                <div class="absolute bottom-10 right-12 text-purple-200/70 text-lg animate-pulse" style="animation-delay:0.8s">✨</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 20 Reasons -->
+          <div data-aos="fade-up" class="mt-2 lg:mt-0">
+            <div class="flex items-center justify-between gap-3">
+              <h3 class="text-2xl sm:text-3xl font-black glow-text">20 Reasons Why I Love You</h3>
+              <div class="hidden sm:block text-white/60 text-sm">Hover to feel the glow ✨</div>
+            </div>
+            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- 20 animated cards -->
+              <div class="reasonCard glass rounded-2xl p-4" data-aos="flip-left" data-aos-duration="600">
+                <div class="text-lg">💗</div><div class="mt-2 font-semibold">Your smile</div><div class="text-sm text-white/70 mt-1">It lights up my world.</div>
+              </div>
+              <div class="reasonCard glass rounded-2xl p-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="30">
+                <div class="text-lg">🌹</div><div class="mt-2 font-semibold">Your kindness</div><div class="text-sm text-white/70 mt-1">So gentle, so real.</div>
+              </div>
+              <div class="reasonCard glass rounded-2xl p-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="60">
+                <div class="text-lg">😂</div><div class="mt-2 font-semibold">Your laugh</div><div class="text-sm text-white/70 mt-1">The best sound ever.</div>
+              </div>
+              <div class="reasonCard glass rounded-2xl p-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="90">
+                <div class="text-lg">🤍</div><div class="mt-2 font-semibold">Your caring heart</div><div class="text-sm text-white/70 mt-1">You make people feel safe.</div>
+              </div>
+              
+              </div>
+              <div class="reasonCard glass rounded-2xl p-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="150">
+                <div class="text-lg">🌙</div><div class="mt-2 font-semibold">Your calm presence</div><div class="text-sm text-white/70 mt-1">Even silence feels warm.</div>
+              </div>
+              <div class="reasonCard glass rounded-2xl p-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="180">
+                <div class="text-lg">🎶</div><div class="mt-2 font-semibold">Your vibe</div><div class="text-sm text-white/70 mt-1">Magnetic and pure.</div>
+              </div>
+              <div class="reasonCard glass rounded-2xl p-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="210">
+                <div class="text-lg">📚</div><div class="mt-2 font-semibold">Your growth</div><div class="text-sm text-white/70 mt-1">Always becoming more you.</div>
+              </div>
+              <div class="reasonCard glass rounded-2xl p-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="240">
+                <div class="text-lg">🫶</div><div class="mt-2 font-semibold">Your love</div><div class="text-sm text-white/70 mt-1">In small ways, in big ways.</div>
+              </div>
+              <div class="reasonCard glass rounded-2xl p-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="270">
+                <div class="text-lg">🍀</div><div class="mt-2 font-semibold">Your optimism</div><div class="text-sm text-white/70 mt-1">You make tomorrow brighter.</div>
+              </div>
+              <div class="reasonCard glass rounded-2xl p-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="300">
+                <div class="text-lg">🧡</div><div class="mt-2 font-semibold">Your patience</div><div class="text-sm text-white/70 mt-1">I feel lucky every day.</div>
+              </div>
+              
+              </div>
+              <div class="reasonCard glass rounded-2xl p-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="360">
+                <div class="text-lg">🌷</div><div class="mt-2 font-semibold">Your elegance</div><div class="text-sm text-white/70 mt-1">Simple but stunning.</div>
+              </div>
+              </div>
+              <div class="reasonCard glass rounded-2xl p-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="420">
+                <div class="text-lg">🗺️</div><div class="mt-2 font-semibold">Your stories</div><div class="text-sm text-white/70 mt-1">Each one feels magical.</div>
+              </div>
+              </div>
+              <div class="reasonCard glass rounded-2xl p-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="480">
+                <div class="text-lg">🤗</div><div class="mt-2 font-semibold">Your hugs</div><div class="text-sm text-white/70 mt-1">Safe. Warm. Home.</div>
+              </div>
+              <div class="reasonCard glass rounded-2xl p-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="510">
+                <div class="text-lg">🫧</div><div class="mt-2 font-semibold">Your sweetness</div><div class="text-sm text-white/70 mt-1">Even days feel softer.</div>
+              </div>
+              <div class="reasonCard glass rounded-2xl p-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="540">
+                <div class="text-lg">🌟</div><div class="mt-2 font-semibold">Your uniqueness</div><div class="text-sm text-white/70 mt-1">You are one of one.</div>
+              </div>
+              <div class="reasonCard glass rounded-2xl p-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="570">
+                <div class="text-lg">❤️</div><div class="mt-2 font-semibold">Simply because you are you</div><div class="text-sm text-white/70 mt-1">My favorite person forever.</div>
+              </div>
+            </div>
+            <div class="mt-5 text-center text-white/70 text-sm">Simply because you are you ❤️</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cake -->
+    <section class="py-16 relative">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="glass rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+          <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(900px circle at 10% 20%, rgba(236,72,153,0.18), transparent 50%), radial-gradient(900px circle at 90% 40%, rgba(59,130,246,0.18), transparent 55%);"></div>
+
+          <div class="flex flex-col lg:flex-row items-center gap-8">
+            <div class="flex-1 text-center lg:text-left" data-aos="fade-up">
+              <h3 class="text-3xl sm:text-4xl font-black glow-text">Make A Birthday Wish 🎂</h3>
+              <p class="mt-3 text-white/70">Tap the button. Watch the candles go out… and the magic begin.</p>
+              <div class="mt-6 flex items-center justify-center lg:justify-start">
+                <button id="blowBtn" class="relative overflow-hidden rounded-2xl px-7 py-3 bg-gradient-to-r from-rose-500 to-pink-500 shadow-[0_0_35px_rgba(236,72,153,0.35)] hover:shadow-[0_0_60px_rgba(236,72,153,0.55)] transition">
+                  <span class="relative z-10 font-bold">Blow The Candles</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 3D-ish cake -->
+            <div data-aos="zoom-in" class="relative w-full lg:w-[420px] h-[320px]">
+              <div id="cake20" class="absolute top-2 left-1/2 -translate-x-1/2 text-3xl sm:text-4xl font-extrabold glow-text">20</div>
+
+              <!-- Candles -->
+              <div id="candles" class="absolute top-20 left-1/2 -translate-x-1/2 flex gap-3">
+                <div class="candle group relative w-4 h-12">
+                  <div class="absolute bottom-0 left-0 right-0 h-9 rounded-full bg-amber-300/10 border border-amber-200/20"></div>
+                  <div class="absolute bottom-9 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-amber-200 animate-pulse"></div>
+                  <div class="absolute bottom-9 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-yellow-200/30 blur-sm candleFlame"></div>
+                  <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-6 h-3 rounded-full bg-pink-500/15 blur-sm"></div>
+                </div>
+                <div class="candle group relative w-4 h-12">
+                  <div class="absolute bottom-0 left-0 right-0 h-9 rounded-full bg-amber-300/10 border border-amber-200/20"></div>
+                  <div class="absolute bottom-9 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-amber-200 animate-pulse"></div>
+                  <div class="absolute bottom-9 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-yellow-200/30 blur-sm candleFlame"></div>
+                  <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-6 h-3 rounded-full bg-pink-500/15 blur-sm"></div>
+                </div>
+                <div class="candle group relative w-4 h-12">
+                  <div class="absolute bottom-0 left-0 right-0 h-9 rounded-full bg-amber-300/10 border border-amber-200/20"></div>
+                  <div class="absolute bottom-9 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-amber-200 animate-pulse"></div>
+                  <div class="absolute bottom-9 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-yellow-200/30 blur-sm candleFlame"></div>
+                  <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-6 h-3 rounded-full bg-pink-500/15 blur-sm"></div>
+                </div>
+              </div>
+
+              <!-- Cake body -->
+              <div class="absolute top-32 left-1/2 -translate-x-1/2 w-72 h-28 rounded-t-[28px] bg-gradient-to-b from-pink-200/20 via-rose-400/15 to-transparent border border-white/10 shadow-[0_40px_100px_rgba(236,72,153,0.14)]" style="transform: perspective(900px) rotateX(10deg);"></div>
+              <div class="absolute top-48 left-1/2 -translate-x-1/2 w-80 h-28 rounded-full bg-gradient-to-b from-white/10 to-rose-500/10 border border-white/10" style="transform: perspective(900px) rotateX(10deg);"></div>
+              <div class="absolute top-70 left-1/2 -translate-x-1/2 w-80 h-24 rounded-full bg-gradient-to-b from-rose-500/10 to-blue-500/10 border border-white/10" style="transform: perspective(900px) rotateX(10deg);"></div>
+              <div class="absolute top-64 left-1/2 -translate-x-1/2 w-72 h-10 rounded-full bg-pink-500/10 blur-[2px]"></div>
+
+              <!-- Sparkles -->
+              <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute -top-2 left-6 text-pink-200/80 text-xl">✨</div>
+                <div class="absolute top-10 right-8 text-blue-200/60 text-lg">✨</div>
+                <div class="absolute bottom-10 left-8 text-purple-200/60 text-lg">✨</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Heart -->
+    <section class="py-16 relative">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <div data-aos="fade-up" class="glass rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+          <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(600px circle at 50% 0%, rgba(236,72,153,0.22), transparent 55%), radial-gradient(500px circle at 0% 80%, rgba(59,130,246,0.18), transparent 60%);"></div>
+          <h3 class="text-3xl sm:text-4xl font-black glow-text">Interactive Heart</h3>
+          <p class="mt-3 text-white/70">Click the heart. Hundreds of hearts will fly out… with messages.</p>
+
+          <div class="mt-10 flex items-center justify-center">
+            <button id="heartBtn" class="relative">
+              <span class="heartPulse text-7xl sm:text-8xl drop-shadow-[0_0_25px_rgba(244,63,94,0.45)]">❤️</span>
+              <span class="absolute -inset-4 rounded-full border border-pink-300/30 animate-ping" style="animation-duration:2.4s"></span>
+              <span class="absolute inset-0 rounded-full blur-xl bg-pink-500/15"></span>
+            </button>
+          </div>
+
+          <div class="mt-6 text-white/60 text-sm">Tip: Try it multiple times ❤️</div>
+
+          <div id="messageStream" class="mt-8 flex flex-wrap justify-center gap-2"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="py-16 relative">
+      <div class="max-w-6xl mx-auto px-6">
+        <h3 data-aos="fade-up" class="text-3xl sm:text-4xl font-black glow-text">Memory Timeline</h3>
+        <p data-aos="fade-up" data-aos-delay="100" class="mt-2 text-white/70">Cards slide from alternating sides. Each moment matters.</p>
+
+        <div class="mt-10 relative">
+          <div class="hidden sm:block absolute left-1/2 top-0 bottom-0 w-px bg-white/10"></div>
+
+          <div class="space-y-6">
+            <div class="timelineCard flex flex-col sm:flex-row gap-4 items-center">
+              <div class="sm:w-1/2 pr-6 sm:text-right" data-aos="fade-right" data-aos-duration="700">
+                <div class="inline-block glass rounded-2xl p-5">
+                  <div class="text-sm text-white/60">First Chat</div>
+                  <div class="text-xl font-bold mt-1">The message that changed everything</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="timelineCard flex flex-col sm:flex-row gap-4 items-center">
+              <div class="sm:w-1/2 pl-6" data-aos="fade-left" data-aos-duration="700">
+                <div class="inline-block glass rounded-2xl p-5">
+                  <div class="text-sm text-white/60">First Call</div>
+                  <div class="text-xl font-bold mt-1">Hours that felt like minutes</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="timelineCard flex flex-col sm:flex-row gap-4 items-center">
+              <div class="sm:w-1/2 pr-6 sm:text-right" data-aos="fade-right" data-aos-duration="700">
+                <div class="inline-block glass rounded-2xl p-5">
+                  <div class="text-sm text-white/60">First Meeting</div>
+                  <div class="text-xl font-bold mt-1">That special spark in real life</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="timelineCard flex flex-col sm:flex-row gap-4 items-center">
+              <div class="sm:w-1/2 pl-6" data-aos="fade-left" data-aos-duration="700">
+                <div class="inline-block glass rounded-2xl p-5">
+                  <div class="text-sm text-white/60">Favorite Memory</div>
+                  <div class="text-xl font-bold mt-1">The one I replay in my mind</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="timelineCard flex flex-col sm:flex-row gap-4 items-center">
+              <div class="sm:w-1/2 pr-6 sm:text-right" data-aos="fade-right" data-aos-duration="700">
+                <div class="inline-block glass rounded-2xl p-5">
+                  <div class="text-sm text-white/60">Special Moments</div>
+                  <div class="text-xl font-bold mt-1">Every day with you is magic</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="timelineCard flex flex-col sm:flex-row gap-4 items-center">
+              <div class="sm:w-1/2 pl-6" data-aos="fade-left" data-aos-duration="700">
+                <div class="inline-block glass rounded-2xl p-5">
+                  <div class="text-sm text-white/60">Today</div>
+                  <div class="text-xl font-bold mt-1">Hasini Turns 20 ❤️</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="timelineCard flex flex-col sm:flex-row gap-4 items-center">
+              <div class="sm:w-1/2 pr-6 sm:text-right" data-aos="fade-right" data-aos-duration="700">
+                <div class="inline-block glass rounded-2xl p-5">
+                  <div class="text-sm text-white/60">Future Together</div>
+                  <div class="text-xl font-bold mt-1">Forever My Favorite Person</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Surprise Popup after 20 seconds -->
+    <div id="surpriseModal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4">
+      <div class="absolute inset-0 backdrop-blur-md bg-black/60"></div>
+      <div class="relative glass rounded-3xl p-6 sm:p-10 w-full max-w-lg text-center">
+        <div class="text-5xl">🎁</div>
+        <h3 class="mt-4 text-2xl sm:text-3xl font-black glow-text">Hasini ❤️</h3>
+        <p class="mt-3 text-white/75 leading-relaxed">
+          Thank you for making my life happier every day.<br />
+          Happy 20th Birthday to the most beautiful girl in my world.
+        </p>
+        <div class="mt-6 flex items-center justify-center">
+          <button id="closeModalBtn" class="rounded-2xl px-6 py-3 bg-white/10 border border-white/15 hover:bg-white/15 transition">Keep Smiling ✨</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grand Finale -->
+    <section id="finale" class="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
+      <div class="absolute inset-0 -z-10">
+        <canvas id="finaleCanvas" class="absolute inset-0"></canvas>
+      </div>
+
+      <div class="absolute inset-0 -z-10" style="background: radial-gradient(800px circle at 30% 10%, rgba(236,72,153,0.25), transparent 55%), radial-gradient(900px circle at 80% 40%, rgba(59,130,246,0.22), transparent 60%), linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.65));"></div>
+
+      <div class="text-center max-w-4xl">
+        <div class="text-sm text-white/60 uppercase tracking-widest" data-aos="fade-up">Grand Finale</div>
+        <h3 id="finaleMain" class="mt-4 text-4xl sm:text-6xl md:text-7xl font-black glow-text" data-aos="zoom-in">Happy 20th Birthday Hasini ❤️</h3>
+        <div class="mt-6 text-2xl sm:text-3xl font-bold text-white/80" id="finaleLine1" data-aos="fade-up" data-aos-delay="150">20 Years Beautiful</div>
+        <div class="mt-2 text-xl sm:text-2xl font-bold text-pink-200/85" id="finaleLine2" data-aos="fade-up" data-aos-delay="250">Forever My Favorite Person ❤️</div>
+        <div class="mt-2 text-xl sm:text-2xl font-bold text-white/80" id="finaleLine3" data-aos="fade-up" data-aos-delay="350">Forever & Always ❤️</div>
+
+        <div class="mt-10 flex items-center justify-center">
+          <button id="restartFinaleBtn" class="rounded-2xl px-6 py-3 bg-white/10 border border-white/15 hover:bg-white/15 transition">
+            Watch the Heart Explosion Again
+          </button>
+        </div>
+
+        <div id="finaleHeartExplosion" class="relative mt-14"></div>
+      </div>
+    </section>
+
+    <footer class="pb-10 pt-4 text-center text-white/40 text-sm">
+      Made with Tailwind • GSAP • AOS • Confetti • Hearts
+    </footer>
+  </main>
+
+  <script>
+    // ---------- Utilities ----------
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ---------- AOS ----------
+    AOS.init({
+      duration: 800,
+      once: true,
+      mirror: false,
+    });
+
+    // ---------- GSAP base ----------
+    gsap.registerPlugin(ScrollTrigger);
+
+    // ---------- Animated typing (Love Letter) ----------
+    const typingTargetText = `Dear Hasini,\n\nOn your 20th birthday, I want you to know how special you are to me.\n\nEvery smile, every conversation, and every moment with you has become one of my favorite memories.\n\nYou make ordinary days feel extraordinary.\n\nHappy Birthday, My Love ❤️`;
+
+    const typingEl = $('#typingText');
+    const cursorEl = $('#typingCursor');
+
+    let typingIndex = 0;
+    function startTyping(){
+      if(prefersReducedMotion) {
+        typingEl.textContent = typingTargetText;
+        cursorEl.style.display = 'none';
+        return;
+      }
+      const tick = () => {
+        typingIndex++;
+        typingEl.textContent = typingTargetText.slice(0, typingIndex);
+        if (typingIndex < typingTargetText.length) {
+          setTimeout(tick, 18 + Math.random() * 35);
+        } else {
+          cursorEl.style.display = 'none';
+          gsap.fromTo($('#letterHeartbeat'), {scale: 0.9}, {scale: 1.1, duration: 0.8, yoyo:true, repeat:1, ease:'power2.out'});
+        }
+      };
+      tick();
+    }
+
+    // ---------- Gallery Lightbox ----------
+    const lightbox = $('#lightbox');
+    const lightboxImg = $('#lightboxImg');
+    const lightboxClose = $('#lightboxClose');
+
+    function openLightbox(src, alt){
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || 'Expanded photo';
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      gsap.fromTo(lightboxImg, {scale: 0.98, opacity: 0.2}, {scale: 1, opacity: 1, duration: 0.5, ease:'power2.out'});
+    }
+    function closeLightbox(){
+      gsap.to(lightboxImg, {scale: 0.98, opacity: 0.2, duration: 0.25, ease:'power2.in', onComplete: () => {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+      }});
+    }
+
+    $$('.galleryItem').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const img = btn.querySelector('img');
+        openLightbox(img.src, img.alt);
+      });
+    });
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
+
+    // ---------- Ambient particles / floating hearts (Canvas) ----------
+    const ambientCanvas = $('#ambientCanvas');
+    const ambientCtx = ambientCanvas.getContext('2d');
+    let ambientW = 0, ambientH = 0;
+
+    function resizeAmbient(){
+      ambientW = ambientCanvas.width = window.innerWidth;
+      ambientH = ambientCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeAmbient);
+    resizeAmbient();
+
+    const ambientItems = [];
+    const symbols = ['♥','💗','🌹','✨','🕊️'];
+    function rand(min,max){ return Math.random()*(max-min)+min; }
+
+    function spawnAmbient(n=45){
+      ambientItems.length = 0;
+      for(let i=0;i<n;i++){
+        ambientItems.push({
+          x: Math.random()*ambientW,
+          y: Math.random()*ambientH,
+          r: rand(8,16),
+          vx: rand(-0.35,0.35),
+          vy: rand(-0.6,-1.6),
+          rot: rand(0,Math.PI*2),
+          vr: rand(-0.02,0.02),
+          life: rand(3.5,8.5),
+          age: rand(0,2.5),
+          sym: symbols[(Math.random()*symbols.length)|0],
+          alpha: rand(0.12,0.35),
+          sizeBoost: rand(0.9,1.2)
+        });
+      }
+    }
+    spawnAmbient();
+
+    function drawAmbient(t){
+      ambientCtx.clearRect(0,0,ambientW,ambientH);
+      const time = t/1000;
+
+      for(const it of ambientItems){
+        it.age += 0.016;
+        if(it.age > it.life){
+          it.age = 0;
+          it.y = ambientH + rand(20,120);
+          it.x = Math.random()*ambientW;
+        }
+        const p = it.age / it.life;
+        it.x += it.vx;
+        it.y += it.vy;
+        it.rot += it.vr;
+        const a = it.alpha * (1 - p);
+
+        ambientCtx.save();
+        ambientCtx.translate(it.x, it.y);
+        ambientCtx.rotate(it.rot);
+        ambientCtx.globalAlpha = a;
+
+        // glow
+        ambientCtx.shadowColor = 'rgba(236,72,153,0.35)';
+        ambientCtx.shadowBlur = 18;
+
+        ambientCtx.font = `${it.r*it.sizeBoost}px serif`;
+        ambientCtx.fillText(it.sym, -it.r*0.35, it.r*0.3);
+        ambientCtx.restore();
+      }
+      requestAnimationFrame(drawAmbient);
+    }
+    requestAnimationFrame(drawAmbient);
+
+    // ---------- Loading particles canvas ----------
+    const loadingCanvas = $('#loadingParticles');
+    const loadingCtx = loadingCanvas.getContext('2d');
+    let loadingW=0, loadingH=0;
+
+    function resizeLoading(){
+      loadingW = loadingCanvas.width = window.innerWidth;
+      loadingH = loadingCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeLoading);
+    resizeLoading();
+
+    const loadingParticles = [];
+    function spawnLoading(){
+      loadingParticles.length = 0;
+      const count = prefersReducedMotion ? 55 : 140;
+      for(let i=0;i<count;i++){
+        loadingParticles.push({
+          x: Math.random()*loadingW,
+          y: Math.random()*loadingH,
+          r: rand(0.8,2.2),
+          vx: rand(-0.25,0.25),
+          vy: rand(-0.35,0.35),
+          a: rand(0.15,0.8),
+          tw: rand(0,Math.PI*2)
+        });
+      }
+    }
+    spawnLoading();
+
+    function drawLoading(t){
+      loadingCtx.clearRect(0,0,loadingW,loadingH);
+      for(const p of loadingParticles){
+        p.x += p.vx; p.y += p.vy;
+        if(p.x < -20) p.x = loadingW+20;
+        if(p.x > loadingW+20) p.x = -20;
+        if(p.y < -20) p.y = loadingH+20;
+        if(p.y > loadingH+20) p.y = -20;
+
+        const flick = 0.55 + 0.45*Math.sin(t/350 + p.tw);
+        loadingCtx.globalAlpha = p.a * flick;
+        loadingCtx.fillStyle = 'rgba(255,255,255,1)';
+        loadingCtx.beginPath();
+        loadingCtx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        loadingCtx.fill();
+
+        // glow
+        loadingCtx.globalAlpha = p.a * 0.35 * flick;
+        loadingCtx.shadowColor = 'rgba(236,72,153,0.5)';
+        loadingCtx.shadowBlur = 18;
+        loadingCtx.beginPath();
+        loadingCtx.arc(p.x,p.y,p.r*2.0,0,Math.PI*2);
+        loadingCtx.fill();
+      }
+      loadingCtx.globalAlpha = 1;
+      requestAnimationFrame(drawLoading);
+    }
+    requestAnimationFrame(drawLoading);
+
+    // ---------- Countdown stage ----------
+    const stageLoading = $('#stageLoading');
+    const stageCountdown = $('#stageCountdown');
+    const countNumber = $('#countNumber');
+    const bgMusic = $('#bgMusic');
+
+    const countdownCanvas = $('#countdownCanvas');
+    const countdownCtx = countdownCanvas.getContext('2d');
+    let cdW=0, cdH=0;
+    function resizeCountdown(){
+      cdW = countdownCanvas.width = window.innerWidth;
+      cdH = countdownCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCountdown);
+    resizeCountdown();
+
+    function clearCD(){ countdownCtx.clearRect(0,0,cdW,cdH); }
+
+    let cdShapes=[];
+    function addSparkles(x,y){
+      const n = prefersReducedMotion ? 35 : 85;
+      for(let i=0;i<n;i++){
+        cdShapes.push({
+          x, y,
+          vx: rand(-4,4),
+          vy: rand(-6,-1),
+          r: rand(1,3),
+          a: 1,
+          c: Math.random()<0.5 ? 'rgba(236,72,153,1)' : 'rgba(59,130,246,1)',
+          life: rand(0.5,1.2)
+        });
+      }
+    }
+
+    function addHeartPulse(){
+      cdShapes.push({pulse:true, t:0, life:1.0});
+    }
+
+    function animateCountdown(t){
+      clearCD();
+      cdShapes = cdShapes.filter(s => {
+        if(s.pulse){
+          s.t += 0.016;
+          const p = s.t / s.life;
+          const scale = 1 + p*0.35;
+          const alpha = 0.55*(1-p);
+          countdownCtx.save();
+          countdownCtx.translate(cdW/2, cdH/2);
+          countdownCtx.globalAlpha = alpha;
+          countdownCtx.fillStyle = 'rgba(236,72,153,1)';
+          countdownCtx.shadowColor = 'rgba(236,72,153,0.65)';
+          countdownCtx.shadowBlur = 30;
+          countdownCtx.font = `${72*scale}px serif`;
+          countdownCtx.fillText('❤️', -36*scale, 28*scale);
+          countdownCtx.restore();
+          return p < 1;
+        }
+
+        s.x += s.vx;
+        s.y += s.vy;
+        s.vy += 0.25; // gravity
+        s.life -= 0.016;
+        s.a = Math.max(0, s.life);
+
+        countdownCtx.save();
+        countdownCtx.globalAlpha = s.a;
+        countdownCtx.fillStyle = s.c;
+        countdownCtx.shadowColor = 'rgba(236,72,153,0.6)';
+        countdownCtx.shadowBlur = 18;
+        countdownCtx.beginPath();
+        countdownCtx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+        countdownCtx.fill();
+        countdownCtx.restore();
+
+        return s.life > 0;
+      });
+
+      if(stageCountdown.classList.contains('hidden') === false){
+        requestAnimationFrame(animateCountdown);
+      }
+    }
+
+    function startCountdown(){
+      stageLoading.classList.add('hidden');
+      stageLoading.style.display = 'none';
+
+      stageCountdown.classList.remove('hidden');
+      stageCountdown.style.display = 'block';
+
+      if(bgMusic && bgMusic.querySelector('source') && bgMusic.querySelector('source').getAttribute('src')){
+        bgMusic.volume = 0.5;
+        bgMusic.play().catch(()=>{});
+      }
+
+      cdShapes = [];
+      requestAnimationFrame(animateCountdown);
+
+      const steps = [
+        {n:3, effect:'zoom'},
+        {n:2, effect:'sparkle'},
+        {n:1, effect:'heart'}
+      ];
+
+      let i=0;
+      const run = () => {
+        if(i>=steps.length){
+          // Reveal into page with cinematic flash
+          return revealWebsite();
+        }
+        const {n,effect} = steps[i];
+        countNumber.textContent = n;
+        cdShapes = [];
+
+        if(effect === 'zoom'){
+          gsap.fromTo(countNumber, {scale:0.7, opacity:0.6}, {scale:1.25, opacity:1, duration:0.9, ease:'power3.out'});
+        }
+        if(effect === 'sparkle'){
+          gsap.fromTo(countNumber, {scale:0.9}, {scale:1.35, duration:0.7, ease:'back.out(1.7)'});
+          addSparkles(cdW/2, cdH/2);
+          confetti({ particleCount: prefersReducedMotion?60:140, spread: 55, origin: { y: 0.5 } });
+        }
+        if(effect === 'heart'){
+          gsap.fromTo(countNumber, {scale:0.95}, {scale:1.45, duration:0.65, ease:'back.out(2)'});
+          addHeartPulse();
+        }
+
+        i++;
+        setTimeout(run, 1150);
+      };
+      run();
+    }
+
+    function revealWebsite(){
+      // Shake + flash + fireworks + confetti + transition
+      const tl = gsap.timeline({defaults:{ease:'power2.out'}});
+      tl
+        .to(stageCountdown, {rotation: (prefersReducedMotion?0:0.9), x: (prefersReducedMotion?0:10), yoyo:true, repeat:2, duration:0.12})
+        .to(stageCountdown, {scale:1.05, duration:0.2}, '<')
+        .to(countNumber, {scale:1.7, opacity:0.4, duration:0.25}, '<')
+        .add(() => {
+          // Bright flash
+          const flash = document.createElement('div');
+          flash.className = 'absolute inset-0 z-[80]';
+          flash.style.background = 'white';
+          flash.style.opacity = '0';
+          flash.style.mixBlendMode = 'screen';
+          stageCountdown.appendChild(flash);
+          gsap.to(flash, {opacity:0.95, duration:0.08, yoyo:true, repeat:0, onComplete: ()=>flash.remove()});
+
+          // Fireworks burst approximation via confetti + burst
+          confetti({
+            particleCount: prefersReducedMotion?120:240,
+            spread: 70,
+            startVelocity: 35,
+            ticks: 150,
+            origin: { x: 0.5, y: 0.45 },
+            colors: ['#fb7185','#f472b6','#60a5fa','#a78bfa','#ffffff']
+          });
+        })
+        .to(countNumber, {scale:0.4, opacity:0, duration:0.25}, '+=0.05')
+        .to(stageCountdown, {opacity:0, duration:0.35, onComplete: ()=>{
+          stageCountdown.classList.add('hidden');
+          stageCountdown.style.display='none';
+          if(bgMusic) bgMusic.pause();
+
+          $('#page').classList.remove('hidden');
+          $('#page').style.display='block';
+
+          // Hero entrance
+          gsap.fromTo('#hero', {opacity:0, y:18}, {opacity:1, y:0, duration:0.9, ease:'power3.out'});
+
+          // Begin typing when ready
+          setTimeout(startTyping, 550);
+
+          // Surprise modal timer
+          setTimeout(showSurpriseModal, 20000);
+
+          // Finale heart explosion after some scroll / or immediately later
+          setupReasonHover();
+          setupOpenHeartButton();
+          setupCakeBlow();
+          setupInteractiveHeart();
+          setupParallax();
+          setupFinale();
+        }});
+
+      // Extra confetti explosion
+      confetti({ particleCount: prefersReducedMotion?180:360, spread: 85, origin: { y: 0.65 } });
+    }
+
+    // ---------- Reason hover lift/glow ----------
+    function setupReasonHover(){
+      $$('.reasonCard').forEach((card, idx) => {
+        card.style.willChange = 'transform, box-shadow';
+        card.addEventListener('pointerenter', () => {
+          if(prefersReducedMotion) return;
+          gsap.to(card, {y:-6, boxShadow:'0 20px 60px rgba(236,72,153,0.20)', duration:0.25});
+        });
+        card.addEventListener('pointerleave', () => {
+          if(prefersReducedMotion) return;
+          gsap.to(card, {y:0, boxShadow:'', duration:0.25});
+        });
+
+        if(!prefersReducedMotion){
+          gsap.to(card, {y: -4, yoyo:true, repeat:-1, duration: 3.6 + (idx%5)*0.4, ease:'sine.inOut', delay:(idx%7)*0.08});
+        }
+      });
+    }
+
+    // ---------- Hero button scroll to letter ----------
+    function setupOpenHeartButton(){
+      const btn = $('#openHeartBtn');
+      btn.addEventListener('click', () => {
+        const target = $('#typingCard');
+        gsap.to(window, {duration:0.3, scrollTo: { y: target.offsetTop - 80 }});
+        // If scrollTo plugin isn't available, fallback:
+        setTimeout(() => target.scrollIntoView({behavior:'smooth', block:'start'}), 80);
+      });
+    }
+
+    // ---------- Cake: blow candles ----------
+    const blowBtn = $('#blowBtn');
+    function setupCakeBlow(){
+      let blown = false;
+      blowBtn.addEventListener('click', () => {
+        if(blown) return;
+        blown = true;
+
+        const candles = $('#candles');
+        const flameEls = $$('.candle .candleFlame');
+        const wickEls = $$('.candle div.w-2');
+
+        // Candles turn off
+        gsap.to(flameEls, {scale:0.2, opacity:0, duration:0.25, stagger:0.05, ease:'power2.in'});
+        gsap.to(wickEls, {scale:0.2, opacity:0, duration:0.2, stagger:0.05, ease:'power2.in'});
+        gsap.to(candles, {y: 8, rotate: -2, duration:0.25, ease:'power2.out'});
+
+        // Confetti + Fireworks
+        confetti({particleCount: prefersReducedMotion?240:520, spread:75, origin:{x:0.5,y:0.55}, colors:['#fb7185','#f472b6','#60a5fa','#a78bfa','#ffffff']});
+        setTimeout(() => {
+          // Fireworks burst using confetti bursts
+          for(let i=0;i<4;i++){
+            const x = 0.25 + i*0.17;
+            setTimeout(() => confetti({particleCount: prefersReducedMotion?90:180, spread:60, origin:{x,y:0.45}, startVelocity:45, ticks:180, gravity:0.9}), i*120);
+          }
+        }, 220);
+
+        // Sparkle shower
+        const shower = document.createElement('div');
+        shower.className = 'absolute inset-0 pointer-events-none';
+        blowBtn.parentElement.appendChild(shower);
+
+        gsap.fromTo('#cake20', {y:-4, scale:0.98}, {y:0, scale:1.02, duration:0.35, ease:'power3.out'});
+      });
+    }
+
+    // ---------- Interactive heart flight + messages ----------
+    const heartBtn = $('#heartBtn');
+    const messageStream = $('#messageStream');
+    function setupInteractiveHeart(){
+      const messages = [
+        'You make my world brighter ❤️',
+        'My favorite place is beside you ❤️',
+        "You're my happiness ❤️",
+        'Happy 20th Birthday Beautiful ❤️',
+        'Every day with you feels like magic ✨',
+        'You are my forever ❤️'
+      ];
+
+      heartBtn.addEventListener('click', () => {
+        // Hearts fly out
+        const rect = heartBtn.getBoundingClientRect();
+        const originX = rect.left + rect.width/2;
+        const originY = rect.top + rect.height/2;
+
+        if(prefersReducedMotion){
+          alert(messages[(Math.random()*messages.length)|0]);
+          return;
+        }
+
+        const count = 180; // hundreds of hearts
+        for(let i=0;i<count;i++){
+          const span = document.createElement('span');
+          span.textContent = Math.random() < 0.6 ? '♥' : '💗';
+          span.className = 'absolute text-pink-200';
+          span.style.left = originX + 'px';
+          span.style.top = originY + 'px';
+          span.style.fontSize = (10 + Math.random()*18) + 'px';
+          span.style.pointerEvents = 'none';
+          span.style.filter = 'drop-shadow(0 0 14px rgba(244,63,94,0.45))';
+          document.body.appendChild(span);
+
+          const angle = (Math.PI*2) * (i/count) + rand(-0.25,0.25);
+          const dist = rand(120, 420);
+          const dx = Math.cos(angle) * dist;
+          const dy = Math.sin(angle) * dist - rand(30,180);
+
+          const dur = rand(0.9, 1.55);
+          gsap.to(span, {
+            x: dx,
+            y: dy,
+            opacity: 0,
+            rotation: rand(-240,240),
+            duration: dur,
+            ease: 'power3.out',
+            onComplete: () => span.remove()
+          });
+        }
+
+        // Random messages appear
+        for(let j=0;j<6;j++){
+          const msg = messages[(Math.random()*messages.length)|0];
+          const p = document.createElement('div');
+          p.textContent = msg;
+          p.className = 'glass px-3 py-2 rounded-full text-xs sm:text-sm text-white/85 border border-white/10';
+          p.style.position = 'relative';
+          messageStream.appendChild(p);
+          gsap.fromTo(p, {y: 10, opacity:0, scale:0.98}, {y:0, opacity:1, scale:1, duration:0.35, ease:'power2.out', delay:j*0.03});
+          setTimeout(() => {
+            gsap.to(p, {y:-10, opacity:0, scale:0.98, duration:0.35, onComplete:()=>p.remove()});
+          }, 1900);
+        }
+
+        confetti({particleCount: prefersReducedMotion?120:220, spread:70, origin:{y:0.6}, colors:['#fb7185','#f472b6','#ffffff','#60a5fa','#a78bfa']});
+      });
+    }
+
+    // ---------- Surprise modal ----------
+    function showSurpriseModal(){
+      const modal = $('#surpriseModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+
+      confetti({particleCount: prefersReducedMotion?140:260, spread:65, origin:{y:0.25}, colors:['#fb7185','#f472b6','#60a5fa','#a78bfa','#ffffff']});
+      const tl = gsap.timeline();
+      tl.fromTo(modal.querySelector('.glass'), {scale:0.94, opacity:0.2}, {scale:1, opacity:1, duration:0.55, ease:'power3.out'});
+
+      // Auto-scroll to top if user is near end
+      gsap.fromTo(modal.querySelector('h3'), {y:10, opacity:0},{y:0, opacity:1, duration:0.5, delay:0.05});
+
+      $('#closeModalBtn').onclick = () => {
+        gsap.to(modal.querySelector('.glass'), {scale:0.98, opacity:0, duration:0.25, onComplete: ()=>{
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }});
+      };
+
+      // Fireflies inside modal (optional) by using ambient canvas already running.
+    }
+
+    // ---------- Parallax on hero ----------
+    function setupParallax(){
+      if(prefersReducedMotion) return;
+      const p1 = $('#parallaxLayer1');
+      const p2 = $('#parallaxLayer2');
+      window.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5);
+        const y = (e.clientY / window.innerHeight - 0.5);
+        gsap.to(p1, {x: x*30, y: y*20, duration:0.4, ease:'power2.out'});
+        gsap.to(p2, {x: x*-26, y: y*-18, duration:0.4, ease:'power2.out'});
+      }, {passive:true});
+    }
+
+    // ---------- Finale: fireworks-like + heart explosion ----------
+    function setupFinale(){
+      const finaleCanvas = $('#finaleCanvas');
+      const finaleCtx = finaleCanvas.getContext('2d');
+      let fw=0, fh=0;
+      function resize(){ fw = finaleCanvas.width = finaleCanvas.clientWidth; fh = finaleCanvas.height = finaleCanvas.clientHeight; }
+      window.addEventListener('resize', resize);
+      resize();
+
+      const sparks=[];
+      function spawnSparks(){
+        const n = prefersReducedMotion ? 60 : 160;
+        for(let i=0;i<n;i++){
+          sparks.push({
+            x: fw*Math.random(),
+            y: fh*Math.random()*0.8,
+            vx: rand(-1.2,1.2),
+            vy: rand(-2.2,2.2),
+            r: rand(1,3.5),
+            life: rand(1.0,2.2),
+            c: Math.random()<0.5 ? 'rgba(236,72,153,0.9)' : 'rgba(59,130,246,0.85)'
+          });
+        }
+      }
+
+      let started=false;
+      function animate(){
+        finaleCtx.clearRect(0,0,fw,fh);
+        for(let i=sparks.length-1;i>=0;i--){
+          const s=sparks[i];
+          s.x += s.vx;
+          s.y += s.vy;
+          s.vy += 0.02;
+          s.life -= 0.016;
+          const a=Math.max(0,s.life);
+          finaleCtx.save();
+          finaleCtx.globalAlpha = a;
+          finaleCtx.shadowColor = s.c;
+          finaleCtx.shadowBlur = 20;
+          finaleCtx.fillStyle = s.c;
+          finaleCtx.beginPath();
+          finaleCtx.arc(s.x,s.y,s.r,0,Math.PI*2);
+          finaleCtx.fill();
+          finaleCtx.restore();
+          if(s.life<=0) sparks.splice(i,1);
+        }
+        requestAnimationFrame(animate);
+      }
+      requestAnimationFrame(animate);
+
+      const finaleHeartExplosion = $('#finaleHeartExplosion');
+
+      function heartExplosion(){
+        finaleHeartExplosion.innerHTML='';
+        if(prefersReducedMotion){
+          confetti({particleCount:200, spread:80, origin:{y:0.65}});
+          return;
+        }
+
+        const count = 260;
+        const rect = finaleHeartExplosion.getBoundingClientRect();
+        const cx = rect.left + rect.width/2;
+        const cy = rect.top + rect.height/2;
+
+        for(let i=0;i<count;i++){
+          const el = document.createElement('span');
+          el.textContent = Math.random()<0.55 ? '♥' : '💗';
+          el.style.position='fixed';
+          el.style.left = cx + 'px';
+          el.style.top = cy + 'px';
+          el.style.fontSize = (12 + Math.random()*22) + 'px';
+          el.style.zIndex = '65';
+          el.style.pointerEvents='none';
+          el.style.filter='drop-shadow(0 0 14px rgba(244,63,94,0.45))';
+          document.body.appendChild(el);
+
+          const angle = Math.random()*Math.PI*2;
+          const dist = rand(110, 520);
+          const dx = Math.cos(angle)*dist;
+          const dy = Math.sin(angle)*dist - rand(30,180);
+
+          gsap.to(el, {
+            x: dx,
+            y: dy,
+            opacity: 0,
+            rotation: rand(-260,260),
+            duration: rand(0.9, 1.7),
+            ease: 'power3.out',
+            onComplete: ()=> el.remove()
+          });
+        }
+
+        confetti({particleCount: prefersReducedMotion?180:420, spread:90, origin:{y:0.68}, colors:['#fb7185','#f472b6','#ffffff','#60a5fa','#a78bfa']});
+      }
+
+      // Start finale fireworks on scroll into view
+      ScrollTrigger.create({
+        trigger: '#finale',
+        start: 'top 70%',
+        once: true,
+        onEnter: () => {
+          if(started) return;
+          started = true;
+          spawnSparks();
+          setTimeout(()=>{ spawnSparks(); }, 300);
+          setTimeout(()=>{ heartExplosion(); }, 900);
+        }
+      });
+
+      $('#restartFinaleBtn').addEventListener('click', () => {
+        spawnSparks();
+        heartExplosion();
+      });
+
+      // Entrance timeline text
+      gsap.fromTo('#finaleLine1', {opacity:0, y:18}, {opacity:1, y:0, duration:0.65, ease:'power3.out', delay:0.05});
+      gsap.fromTo('#finaleLine2', {opacity:0, y:18}, {opacity:1, y:0, duration:0.65, ease:'power3.out', delay:0.12});
+      gsap.fromTo('#finaleLine3', {opacity:0, y:18}, {opacity:1, y:0, duration:0.65, ease:'power3.out', delay:0.18});
+    }
+
+    // ---------- Start flow ----------
+    // Small delay so user sees cinematic loading
+    setTimeout(() => {
+      startCountdown();
+    }, 1600);
+
+    // Enable once DOM ready (already)
+  </script>
+
+  <!-- Replace this placeholder with your Hasini's music (OPTIONAL) -->
+  <!-- Notes:
+       1) Browsers may block autoplay audio until user interacts.
+       2) You can set bgMusic <source src="..."> with your file.
+  -->
+</body>
+</html>
+

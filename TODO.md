@@ -1,0 +1,4 @@
+- [x] Plan accepted: create a way to run index.html on port 3000 publicly
+- [x] Update project files (if needed) to support serving
+- [x] Test: start server and verify it serves index.html
+- [x] Provide command for public access (0.0.0.0:3000)
